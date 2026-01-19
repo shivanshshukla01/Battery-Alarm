@@ -49,9 +49,7 @@ while True:
             stop_alert = False
             sound_file = "low-battery.wav"
     elif percent >= HIGHEST_BATTERY_POINT and charging:
-        print("over high point and still charging")
         if not alert_active:
-            print("alert is not going on")
             alert_active = True
             stop_alert = False
             sound_file = "full-battery.wav"
@@ -61,7 +59,6 @@ while True:
             stop_alert = True
             alert_active = False
             sound_file = None
-
 
     if sound_file != None:
         sound = AudioSegment.from_file(sound_file)
